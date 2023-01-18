@@ -136,13 +136,13 @@ async def start_uploading(data):
         
         guessname = f"**{ghostname}**" + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n"+ "#Source #WebDL"
 
-        anilist = await get_channel(id)
+        anilistz = await get_channel(id)
 
-        if anilist == 0:
+        if anilistz == 0:
 
          img, caption = await get_anilist_data(name)
 
-         main = await app.send_photo(KAYO_ID,photo=img,caption=caption)
+         mainz = await app.send_photo(KAYO_ID,photo=img,caption=caption)
 
 
 
