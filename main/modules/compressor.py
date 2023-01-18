@@ -12,7 +12,7 @@ import subprocess
 
 async def gg():
 
-    cmd = '''ffmpeg -hide_banner -loglevel quiet -progress "progressaa.txt" -i "video.mkv" -c:v copy-c:a copy "out.mkv" -y''',
+    cmd = '''ffmpeg -hide_banner -loglevel quiet -progress "progressaa.txt" -i "video.mkv" -c:v copy -c:a copy "out.mkv" -y''',
     subprocess.Popen(cmd,shell=True)
 
 async def compress_video(total_time, videox, name, guessname):
