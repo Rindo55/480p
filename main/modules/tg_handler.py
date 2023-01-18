@@ -140,7 +140,7 @@ async def start_uploading(data):
 
         if anilistz == 0:
 
-         img, caption = await get_anilist_data(name)
+         img, caption = await get_anilist_data(title)
 
          mainz = await app.send_photo(KAYO_ID,photo=img,caption=caption)
 
