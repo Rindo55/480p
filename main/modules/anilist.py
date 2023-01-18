@@ -116,11 +116,7 @@ def get_anime_name(title):
     title = title[:-2].strip()
 
     x = title.split(" ")[-1].strip()
-
-    if str(x[-1]) in digits and str(x[0]) == "S" and str(x[1]) in digits:
-      if "S" in x:
-        y = x.replace("S","Season ")
-        title = title.replace(x,y)
+    x = x.replace("Shinka", "Shin Shinka")
     return title
 
 atext = """
