@@ -135,13 +135,9 @@ async def start_uploading(data):
         ghostname = ghostname.replace("(480p)", "")
         
         guessname = f"**{ghostname}**" + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n"+ "#Source #WebDL"
-         img, caption = await get_anilist_data(title)
+        img, caption = await get_anilist_data(title)
 
-         mainz = await app.send_photo(KAYO_ID,photo=img,caption=caption)
-
-
-
-
+        mainz = await app.send_photo(KAYO_ID,photo=img,caption=caption)
 
         videox = await app.send_document(
 
@@ -162,12 +158,7 @@ async def start_uploading(data):
         os.rename(file,"video.mkv")
 
 
-
-
-
-
-         
-
+        
 
         compressed = await compress_video(duration,videox,name,guessname)
         
