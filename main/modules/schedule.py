@@ -5,7 +5,8 @@ from main.inline import button2
 from pyrogram.types import Message
 from config import STATUS_ID, INDEX_ID, UPLOADS_ID, SCHEDULE_ID, UPLOADS_USERNAME
 
-schedule = app.get_messages(INDEX_ID,SCHEDULE_ID)
+KAYO_ID = -1001159872623
+schedule = app.get_messages(KAYO_ID,SCHEDULE_ID)
 schedule: Message
 
 def change_tz(gmt):
@@ -14,7 +15,6 @@ def change_tz(gmt):
     y = int(y)
 
     time = (i * 60) + y
-    time = time + 330
 
     i = math.floor(time/60)
     y = time-(i*60)
@@ -53,7 +53,7 @@ async def update_schedule():
             i["title"]
         )
 
-    text += "\n<b>⏰ Current TimeZone :</b> <code>IST (UTC +5:30)</code>"
+    text += "\n<b>⏰ Current TimeZone :</b> <code>UTC</code>"
     
     try:
         await schedule.edit(text,parse_mode="html")
