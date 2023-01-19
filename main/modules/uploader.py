@@ -69,7 +69,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
 
             ])
             filed = os.path.basename(file)
-            filed = filed.replace("(480p)", "[480p x265]")
+            filed = filed.replace("(480p)", "[480p x264]")
             caption = f"{name}"
             caption = caption.replace("(480p)", "")
             gcaption=f"**{caption}**" + "\n" + "✓  `480p x264`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n" + "#Encoded #x264"
