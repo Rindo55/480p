@@ -151,8 +151,6 @@ async def start_uploading(data):
             caption=guessname,
 
             file_name=filed,
-            
-            thumb=thumbnail,
 
             force_document=True
 
