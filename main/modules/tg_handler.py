@@ -16,8 +16,6 @@ from main.modules.db import del_anime, save_uploads
 
 from main.modules.downloader import downloader
 
-from main.modules.thumbnail import generate_thumbnail
-
 from main.modules.anilist import get_anilist_data, get_anime_img, get_anime_name
 
 from config import INDEX_USERNAME, UPLOADS_USERNAME, UPLOADS_ID, INDEX_ID, PROGRESS_ID, LINK_ID
@@ -139,7 +137,6 @@ async def start_uploading(data):
         ghostname = ghostname.replace("(480p)", "")
         
         guessname = f"**{ghostname}**" + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n"+ "#Source #WebDL"
-        thumbnail = await generate_thumbnail(id,file,tit,ep_num,size,format_time(duration))
         main = await app.send_photo(KAYO_ID,photo=img,caption=caption)
 
         videox = await app.send_document(
