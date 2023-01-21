@@ -136,7 +136,7 @@ atext = """
 """
 
 async def get_anilist_data(name):
-    vars_ = {"search": title}
+    vars_ = {"search": name}
     data = await get_anime(vars_,less=False)
     id_ = data.get("id")
     title = data.get("title")
