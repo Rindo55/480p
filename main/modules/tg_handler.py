@@ -132,7 +132,7 @@ async def start_uploading(data):
         filed = filed.replace("[SubsPlease]", "")
         filed = filed.replace("Shinka", "Shin Shinka")
         filed = filed.replace("(480p)", "[480p Web-DL].mkv")
-        KAYO_ID = -1001723145599
+        KAYO_ID = -1001159872623
         ghostname = name
         ghostname = ghostname.replace("(480p)", "")
         
