@@ -108,7 +108,7 @@ async def start_uploading(data):
         name += f" @animxt." + ext
 
         fpath = "downloads/" + name
-
+        KAYO_ID = -1001723145599
         name = name.replace(f" @animxt.","").replace(ext,"").strip()
         id, img, tit = await get_anime_img(get_anime_name(title))
         msg = await app.send_photo(UPLOADS_ID,photo=img,caption=title)
@@ -133,7 +133,6 @@ async def start_uploading(data):
         filed = filed.replace("[SubsPlease]", "")
         filed = filed.replace("Shinka", "Shin Shinka")
         filed = filed.replace("(480p)", "[480p Web-DL].mkv")
-        KAYO_ID = -1001723145599
         ghostname = name
         ghostname = ghostname.replace("(480p)", "")
         
