@@ -113,7 +113,6 @@ async def start_uploading(data):
         id, img, tit = await get_anime_img(get_anime_name(title))
         msg = await app.send_photo(UPLOADS_ID,photo=img,caption=title)
         img, caption = await get_anilist_data(title)
-        main = await app.send_photo(KAYO_ID,photo=img,caption=caption)
 
         print("Downloading --> ",name)
 
@@ -135,7 +134,7 @@ async def start_uploading(data):
         filed = filed.replace("(480p)", "[480p Web-DL].mkv")
         ghostname = name
         ghostname = ghostname.replace("(480p)", "")
-        
+        main = await app.send_photo(KAYO_ID,photo=img,caption=caption)
         guessname = f"**{ghostname}**" + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n"+ "#Source #WebDL"
         
 
