@@ -111,10 +111,9 @@ async def start_uploading(data):
 
         name = name.replace(f" @animxt.","").replace(ext,"").strip()
         id, img, tit = await get_anime_img(get_anime_name(title))
+        msg = await app.send_photo(UPLOADS_ID,photo=img,caption=title)
         img, caption = await get_anilist_data(title)
         main = await app.send_photo(KAYO_ID,photo=img,caption=caption)
-        msg = await app.send_photo(UPLOADS_ID,photo=img,caption=title)
-        
 
         print("Downloading --> ",name)
 
