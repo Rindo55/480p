@@ -111,8 +111,10 @@ async def start_uploading(data):
 
         name = name.replace(f" @animxt.","").replace(ext,"").strip()
         id, img, tit = await get_anime_img(get_anime_name(title))
-        msg = await app.send_photo(UPLOADS_ID,photo=img,caption=title)
         img, caption = await get_anilist_data(title)
+        main = await app.send_photo(KAYO_ID,photo=img,caption=caption)
+        msg = await app.send_photo(UPLOADS_ID,photo=img,caption=title)
+        
 
         print("Downloading --> ",name)
 
@@ -132,12 +134,12 @@ async def start_uploading(data):
         filed = filed.replace("[SubsPlease]", "")
         filed = filed.replace("Shinka", "Shin Shinka")
         filed = filed.replace("(480p)", "[480p Web-DL].mkv")
-        KAYO_ID = -1001159872623
+        KAYO_ID = -1001723145599
         ghostname = name
         ghostname = ghostname.replace("(480p)", "")
         
         guessname = f"**{ghostname}**" + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n"+ "#Source #WebDL"
-        main = await app.send_photo(KAYO_ID,photo=img,caption=caption)
+        
 
         videox = await app.send_document(
 
